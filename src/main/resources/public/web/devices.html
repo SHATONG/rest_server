@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartGlass Devices</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type='text/javascript' charset='utf-8' src="js/devices.js"></script>
+    <script type='text/javascript' charset='utf-8' src="js/common.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type='text/css' rel='stylesheet' href='css/common.css'>
+    <link type='text/css' rel='stylesheet' href='css/devices.css'>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        var url = "/smartglass/glasslist";
+        $(document).ready(function () {
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: "div_id=2",
+                cache: false,
+                async: true,
+                dataType: "JSON",
+                headers: {
+                    'version': "1.0",
+                    'token': getCookie("token")
+                },
+                success: function (data, textStatus, jqXHR) {
+                    if (data['statusCode'] == 0) {
+                        setGlassList(data.content)
+
+                    } else if (data['statusCode'] == 1003) {
+                        alert("failed")
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                }
+            });
+        });
+    </script>
+    <script>
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            var token = getCookie("token");
+            if (token == "") {
+                window.location.href ="http://localhost:8080/web/login.html";
+            } else {
+                $("#divnick_message").text(getCookie("name"));
+                $("#usernick_message").text(getCookie("nickname"));
+            }
+
+        }
+    </script>
+
+</head>
+<body onload="checkCookie()">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">SmartGlass Management Console</a>
+        </div>
+        <div id="navbar" class="navbar-collapse">
+            <form class="navbar-form navbar-right">
+                <button class="btn btn-default" type="button" onclick="logout()">ログアウト</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div id="contents">
+    <div class="container">
+        <div class="title"><h2>[<span id="divnick_message"></span>] <span id="usernick_message"></span> さん</h2></div>
+        <div id='peers'>
+            <div class="panel panel-primary">
+                <div class="panel-heading">接続先一覧</div>
+                <div class="panel-body">接続先が見つかりません</div>
+                <ul id='peers_list' class='list-group'>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

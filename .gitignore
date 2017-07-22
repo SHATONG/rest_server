@@ -1,0 +1,15 @@
+.gradle
+*.iml
+build/
+.project
+.settings/
+logs/
+gradle/
+gradlew
+gradlew.bat
+bin
+target
+.classpath
+build.sh
+*.gradle
+.idea

@@ -1,0 +1,71 @@
+* {
+	color: #333333;
+	font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, sans-serif;
+}
+.navbar-inverse {
+	background-color: #000000;
+	border-color: #000000;
+}
+.navbar-inverse .navbar-brand {
+	color: #ffffff;
+}
+
+.navbar-header {
+	margin-left: 0;
+	margin-right: 0;
+	float: left;
+}
+
+.navbar-form {
+	float: right!important;
+	margin-right: -15px;
+	width: auto;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-left: 0;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+#contents {
+	width: 100vw;
+	height: 100vh;
+	padding-top: 50px;
+}
+#contents > .container {
+	width: 100vw;
+	height: calc(100vh - 50px);
+	overflow: hidden;
+}
+
+#contents > .container .title {
+	height: 60px;
+}
+
+#contents h2 {
+	font-size: 20px;
+}
+
+.panel-primary>.panel-heading {
+	color: #ffffff;
+	background-color: #004ea2;
+	border-color: #004ea2;
+}
+#version {
+	position: fixed;
+	bottom: 5px;
+	right: 15px;
+	z-index: 9999;
+}
+#progress-message {
+	position: fixed;
+	bottom: 5px;
+	left: 15px;
+	z-index: 9998;
+}
+.error-message,
+#alert_message {
+	padding-top: 10px;
+	color: #ff0000;
+}

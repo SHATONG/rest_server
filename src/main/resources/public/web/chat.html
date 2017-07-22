@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartGlass WebRTC Host</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<script type='text/javascript' src="/socket.io/socket.io.js"></script>-->
+    <script type='text/javascript' src="https://skyway.io/dist/0.3/peer.js"></script>
+    <script type='text/javascript' charset='utf-8' src="https://skyway.io/dist/0.3/peer.min.js"></script>
+    <script type='text/javascript' charset='utf-8' src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type='text/javascript' src="https://skyway.io/dist/adapter.js"></script>
+    <script type='text/javascript' src="https://skyway.io/dist/screenshare.js"></script>
+    <script type='text/javascript' src="https://cdn.WebRTC-Experiment.com/MediaStreamRecorder.js"></script>
+    <script type='text/javascript' src="https://cdn.WebRTC-Experiment.com/gumadapter.js"></script>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script>
+//    var API_KEY = "<%= api_key %>";
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i].trim();
+            if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        var token = getCookie("token");
+        if (token == "") {
+            window.location.href ="http://localhost:8080/web/login.html";
+        } else {
+            $("#divnick_message").text(getCookie("name"));
+            $("#usernick_message").text(getCookie("nickname"));
+        }
+
+    }
+
+    </script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type='text/css' rel='stylesheet' href='css/common.css'>
+    <link type='text/css' rel='stylesheet' href='css/chat.css'>
+    <script type='text/javascript' charset='utf-8' src="js/chat.js"></script>
+</head>
+<body onload="checkCookie()">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SmartGlass Management Console</a>
+        </div>
+        <div id="navbar" class="navbar-collapse">
+          <form class="navbar-form navbar-right">
+          	<button class="btn btn-default" type="button" id="modeChangeBtn" onclick="modeChange()" >スクリーンシェア</button>
+            <button class="btn btn-default" type="button" onclick="logout()">ログアウト</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div id="contents">
+        <div class="container">
+            <div class="title" style="heigth:90px">
+                <h2>[<span id="divnick_message"></span>] <span id="usernick_message"></span> さん</h2>
+                PeerID : <span id="callee_name"></span>(My Peer Id：<span id="my_peerId"></span>)<br/>
+            </div>
+            <div id='main'>
+                <div class="video-contents">
+                    <div class="block block1">
+                        <video id='video_remote' autoplay style="z-index: -1;"></video>
+                        <div id="iconDIV" style="z-index:2; margin-top:-40px;text-align: right;width:99%">
+                            <span id="recordTime" style="cursor:default;width:30px; height:30px;color:white;display:none;vertical-align: super;"> 00:00 </span>
+                            <input type="image" id="recordBegin" onclick="recordBegin()" src="css/record_start.png" style="width:30px;height:30px;">
+                            <input type="image" id="recordEnd" onclick="recordEnd()" src="css/record_stop.png" style="width:30px;height:30px;display:none;">
+                        </div>
+                    </div>
+                    <div class="block block2">
+                         <video id='video_local' autoplay muted></video>
+                         <div class="btn-hangup">
+                            <button class="btn btn-block btn-lg btn-danger" onclick="hangup()">通話終了</button>
+                        </div>
+                    </div>
+                    <div id='receivedImage'></div>
+                </div>
+                	
+            </div>
+        </div>
+    </div>
+    <div id="progress-message">
+        <span></span>
+    </div>
+
+</body>
+</html>

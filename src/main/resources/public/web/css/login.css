@@ -1,0 +1,28 @@
+* {
+	color: #333333;
+	font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", Avenir, "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, sans-serif;
+}
+
+.main-contents {
+    width: 300px;
+    margin: calc(100vh - 75vh) auto;
+}
+.main-contents h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #004ea2;
+    border-color: #004ea2;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #96caeb;
+    border-color: #96caeb;
+}
+.error-message,
+#alert_message {
+	padding-top: 10px;
+	color: #ff0000;
+}

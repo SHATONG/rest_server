@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <classPathEntry location="C:\Users\liuqi\Desktop\rest_server\src\mybatis-generator\mapper-3.3.0.jar"/>
+    <classPathEntry location="C:\Users\liuqi\Desktop\rest_server\src\mybatis-generator\mysql-connector-java-5.1.37.jar" />
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+
+
+            <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/mydb"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="model"
+                            targetProject="C:\Users\liuqi\Desktop\rest_server\src\mybatis-generator\src"/>
+
+        <sqlMapGenerator targetPackage="mybatis"
+                         targetProject="C:\Users\liuqi\Desktop\rest_server\src\mybatis-generator\src"/>
+
+        <javaClientGenerator targetPackage="mapper"
+                             targetProject="C:\Users\liuqi\Desktop\rest_server\src\mybatis-generator\src"
+                             type="XMLMAPPER"/>
+
+        <!--<table tableName="T_User" domainObjectName="User"-->
+               <!--enableCountByExample="false"-->
+               <!--enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false">-->
+            <!--<generatedKey column="d_id" sqlStatement="MYSQL" identity="true"/>-->
+            <!--<columnRenamingRule searchString="^D_"-->
+                                <!--replaceString=""/>-->
+        <!--</table>-->
+
+        <table tableName="division" domainObjectName="Division"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+            <!--<columnRenamingRule searchString="^D_"-->
+                                <!--replaceString=""/>-->
+        </table>
+        <table tableName="smartglass" domainObjectName="SmartGlass"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+            <!--<columnRenamingRule searchString="^D_"-->
+            <!--replaceString=""/>-->
+        </table>
+        <table tableName="user" domainObjectName="User"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="MYSQL" identity="true"/>
+            <!--<columnRenamingRule searchString="^D_"-->
+            <!--replaceString=""/>-->
+        </table>
+    </context>
+</generatorConfiguration>

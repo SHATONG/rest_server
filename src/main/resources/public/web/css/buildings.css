@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.content-table{
+    min-height: 500px;
+}
+
+#buildingInfosInputTable {
+    /*padding: 5% 0 0 70%;*/
+    -ms-transform: translate(-20%,10%);   /*IE9及以上支持 */
+
+    -webkit-transform: translate(150%,100px);     /*Safari and Chrome*!*/
+    padding-bottom: 10px;
+}
+
+#buildingInfosInputTable tr {
+    height: 50px;
+
+}
+
+#buildingInfosInputTable tr th {
+    /*height: 50px;*/
+    float: right;
+    border: hidden;
+    padding: 15px 0 0 0;
+
+}
+
+#buildingInfosInputTable tr td {
+    /*height: 50px;*/
+    padding: 0 15px 0 15px;
+    -webkit-appearance: none;
+    border:none;
+}
+
+#buildingInfosInputTable tr td input{
+    height: 36px;
+    width: 275px;
+    padding: 0 15px 0 15px;
+    border-radius: 5px;
+
+
+}
+
+#buildingInfosInputTable tr td select{
+    height: 36px;
+    width: 275px;
+    padding: 0 3px 0 15px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.bottom_button{
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    background-color: #e3e3e3;
+    width : 150px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

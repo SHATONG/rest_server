@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>建物情報登録</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script type="application/javascript" src="js/buildings.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/buildings.css"/>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">SmartGlass Buildings Identify</a>
+        </div>
+        <div id="navbar" class="navbar-collapse">
+            <form class="navbar-form navbar-right">
+                <button type="button" class="btn btn-default" onclick="frontPageBack()">戻る</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="content-table">
+
+    <form name="building_form" method="post" onsubmit="">
+        <table id="buildingInfosInputTable" border="0" align="center">
+            <tr>
+                <th>
+                    建物名称
+                </th>
+                <td>
+                    <input type="text" id="building_name" name="building_name"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    住所
+                </th>
+                <td>
+                    <input type="text" id="address" name="address"/>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    階数
+                </th>
+                <td>
+                    <select id="floors" name="floors">
+                        <option value="0"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    部屋数（1フロア）
+                </th>
+                <td>
+                    <select id="rooms" name="rooms">
+                        <option value="0"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    建物タイプ
+                </th>
+                <td>
+                    <select id="building_type" name="building_type">
+                        <option value="0"></option>
+                        <option value="1">鉄筋コンクリート造り</option>
+                        <option value="2">木材造り</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    工程
+                </th>
+                <td>
+                    <select id="project_number" class="project_number" name="project_number"
+                            onchange="project_numbers();">
+                        <option value="0"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+    <div id="bottom">
+            <button type="button" id="submit_button" class="bottom_button">作成</button>
+    </div>
+</body>
+</html>
