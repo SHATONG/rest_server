@@ -39,16 +39,16 @@ public class HeaderMonitor {
      */
     @Before("execution(* com.ntt.smartglass.rest..*Controller.*(..))")
     public Object logServiceAccess() throws Throwable {
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = attributes.getRequest();
-        logger.info("URL : " + request.getRequestURL().toString());
-        logger.info("HTTP_METHOD : " + request.getHeader("version"));
-        logger.info("IP : " + request.getRemoteAddr());
-        tokenCheck(request);
-        versionCheck(request);
-
-
-
+//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+//        HttpServletRequest request = attributes.getRequest();
+//        logger.info("URL : " + request.getRequestURL().toString());
+//        logger.info("HTTP_METHOD : " + request.getHeader("version"));
+//        logger.info("IP : " + request.getRemoteAddr());
+//        tokenCheck(request);
+//        versionCheck(request);
+//
+//
+//
         return null;
     }
 
@@ -65,18 +65,18 @@ public class HeaderMonitor {
     }
 
     private void tokenCheck(HttpServletRequest request) throws AuthenticationException {
-        String url = request.getRequestURI();
-        if (url.contains("auth") || url.contains("managerlogin")) {
-            return;
-        }
-        String auth = request.getHeader("token");
-        request.getHeaderNames();
-        request.getMethod();
-
-        if ((auth != null) && ServerCache.getInstance().isGlassTokenExist(auth) && (auth.length() > 0)) {
-            return;
-        } else {
-            throw new AuthenticationException();
-        }
+//        String url = request.getRequestURI();
+//        if (url.contains("auth") || url.contains("managerlogin")) {
+//            return;
+//        }
+//        String auth = request.getHeader("token");
+//        request.getHeaderNames();
+//        request.getMethod();
+//
+//        if ((auth != null) && ServerCache.getInstance().isGlassTokenExist(auth) && (auth.length() > 0)) {
+//            return;
+//        } else {
+//            throw new AuthenticationException();
+//        }
     }
 }

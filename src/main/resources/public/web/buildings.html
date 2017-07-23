@@ -5,6 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script type='text/javascript' charset='utf-8' src="js/buildings.js"></script>
+    <script type='text/javascript' charset='utf-8' src="js/ajaxUtil.js"></script>
+    <script type='text/javascript' charset='utf-8' src="js/buildings_scan.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--<link type='text/css' rel='stylesheet' href='css/common.css'>-->
     <link type='text/css' rel='stylesheet' href='css/buildings.css'>
@@ -26,35 +28,42 @@
 </nav>
 
 <div class="content-table">
-    <table border="1">
+    <table id = "buildings_table" border="1">
         <tr>
-            <td>名称：</td>
+            <td class="tdname">名称：</td>
             <td>XXXXXXXXXXX</td>
-            <td>作成日：</td>
+            <td class="tdname">作成日：</td>
             <td>2017/07/01 16:00</td>
             <td><button type="button" class = "btn btn-default"   >ユーザ管理</button></td>
         </tr>
         <tr>
-            <td>住所：</td>
+            <td class="tdname">住所：</td>
             <td>東京都XXX区○○丁目</td>
-            <td>最終更新日：</td>
+            <td class="tdname">最終更新日：</td>
             <td>2017/07/01 16:00</td>
             <td><button type="button" class = "btn btn-default"   >ユーザ管理</button></td>
         </tr>
         <tr>
             <td><button type="button" class = "btn btn-default"   >ユーザ管理</button></td>
-            <td>最終更新日：</td>
+            <td></td>
+            <td class="tdname">最終更新日：</td>
             <td>2017/07/01 16:00</td>
             <td><button type="button" class = "btn btn-default"   >ユーザ管理</button></td>
         </tr>
         <tr>
             <td><button type="button" class = "btn btn-default"   >ユーザ管理</button></td>
-            <td>最終更新日：</td>
+            <td></td>
+            <td class="tdname">最終更新日：</td>
             <td>2017/07/01 16:00</td>
             <td><button type="button" class = "btn btn-default"   >ユーザ管理</button></td>
         </tr>
     </table>
 </div>
+<script>
+    $(document).ready(function () {
+        buildings_js.buildings_js.init();
+    });
+</script>
 <hr  class="hr">
 </body>
 </html>

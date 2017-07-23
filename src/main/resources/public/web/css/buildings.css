@@ -12,6 +12,20 @@ html, body {
     min-height: 500px;
 }
 
+#buildings_table {
+    width: 100%;
+    /*height: 100%;*/
+    -webkit-transform: translate(0%,100px);     /*Safari and Chrome*!*/
+
+    padding-top: 50px;
+}
+.tdname{
+    float: right;
+    border:none;
+    text-align: center
+
+}
+
 #buildingInfosInputTable {
     /*padding: 5% 0 0 70%;*/
     -ms-transform: translate(-20%,10%);   /*IE9及以上支持 */
@@ -19,6 +33,7 @@ html, body {
     -webkit-transform: translate(150%,100px);     /*Safari and Chrome*!*/
     padding-bottom: 10px;
 }
+
 
 #buildingInfosInputTable tr {
     height: 50px;
